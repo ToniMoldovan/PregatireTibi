@@ -2,16 +2,21 @@
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        int[] array = {1, 2, 3, 4, 5, 5, 6, 7, 8, 9, 0};
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        int firstSmallestNumber = array[0], secondSmallestNumber = array[0];
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < firstSmallestNumber) {
+                secondSmallestNumber = firstSmallestNumber;
+                firstSmallestNumber = array[i];
+            } else if (array[i] < secondSmallestNumber) {
+                secondSmallestNumber = array[i];
+            }
         }
+
+        System.out.println("First smallest number: " + firstSmallestNumber);
+        System.out.println("Second smallest number: " + secondSmallestNumber);
+
     }
 }
